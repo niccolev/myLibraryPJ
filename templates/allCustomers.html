@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="h1DisplayALL">All Customers Directory</h1><br><br>
+<!-- {{ customers_list }} -->
+<div class="row">
+    {% for cust in customers_list %}
+    <div class="column">
+        <div class="card">
+          <img src="https://picsum.photos/200/30{{cust.id}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{cust.id}} - {{cust.customerName}}</h5>
+            <p class="card-text">Age: {{cust.age}}</p>
+            <p class="card-text">City: {{cust.city}}</p>
+            <a class ="button" href="/deletecustomer/{{cust.id}}">Delete Customer</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %} 
+</div>
+{% endblock %} 

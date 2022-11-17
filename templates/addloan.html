@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form class="ADDforms" action="{{ url_for('add_loan') }}" method = "POST">
+    <h1>Loan a Book</h1>
+    <p1>Customer ID:</p1>
+    <input type="text" name="customer_id" /><br>
+    <p1>Book ID:</p1>
+    <input type="text" name="book_id" /><br>
+    <input class="submitbtn" type="submit" value="Submit" />
+</form>
+{% endblock %}

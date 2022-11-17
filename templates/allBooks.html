@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="h1DisplayALL">All Books Directory</h1>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+<!-- {{ book_list }} -->
+{% for book in book_list %}
+<div class="column">
+    <div class="card">
+      <img src="https://picsum.photos/200/30{{book.id}}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{book.id}} - {{book.bookName}}</h5>
+        <p class="card-text">Author:{{book.author}}</p>
+        <p class="card-text">Year Published:{{book.yearPublished}}</p>
+        <p class="card-text">Loan Type:{{book.Type}}</p>
+        <a class ="button" href="/deletebook/{{book.id}}">Delete Book</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %} 
+</div>
+{% endblock %}

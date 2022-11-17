@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form class="ADDforms" action="{{ url_for('add_customer') }}" method = "POST">
+    <h1>Add a Customer</h1>
+    <p1>Name:</p1>
+    <input type="text" name="custname" /><br>
+    <p1>City:</p1>
+    <input type="text" name="city" /><br>
+    <p1>Age:</p1>
+    <input type="text" name="age" /><br>
+    <input class="submitbtn" type="submit" value="Submit" />
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="h1DisplayALL">All Loans Directory</h1>
+{% for loan in loan_list %}
+<div class="column">
+    <div class="card">
+      <img src="https://picsum.photos/200/30{{loan.id}}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Loan ID: {{loan.id}}</h5>
+        <p class="card-text">Book ID: {{loan.book_id}}</p>
+        <p class="card-text">Customer ID: {{loan.customer_id}}</p>
+        <p class="card-text">Loan Date: {{loan.loan_date}}</p>
+        <p class="card-text">Required return date: {{loan.return_date}}</p>
+        <a class ="button" href="/returnloan/{{loan.id}}">Return book</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %} 
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{%block title%}Find a Book{% endblock %}
+{%block content%}
+<form class="FINDforms" action="{{ url_for('find_book') }}" method = "POST">
+    <h1>Find a Book By the Book's Name:</h1><br><br>
+    <p1>Book's Name:</p1>
+    <input type="text" name="bkname" /><br>
+    <input class="submitbtn" type="submit" value="Search" />
+</form><br>
+{% for book in bookNames %}
+<p class="foundRES">
+    Book ID: {{book.id}}<br>
+    Book Name: {{book.bookName}}<br>
+    Author: {{book.author}}<br>
+    yearPublished: {{book.yearPublished}}<br>
+    Type: {{book.Type}}<br>
+    <a class ="button" href="/deletebook/{{book.id}}">Delete Book</a>
+</p>
+{%endfor%}
+{%endblock%}
